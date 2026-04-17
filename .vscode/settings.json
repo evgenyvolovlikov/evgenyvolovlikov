@@ -1,0 +1,37 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": false,
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "file",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+
+	"js/ts.format.semicolons": "remove",
+
+	"prettier.bracketSpacing": false,
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 4,
+	"prettier.singleQuote": true,
+	"prettier.arrowParens": "avoid",
+	"prettier.trailingComma": "none",
+	"prettier.bracketSameLine": false,
+	"prettier.printWidth": 88,
+	"prettier.semi": false,
+
+	"css.completion.completePropertyWithSemicolon": false,
+	"vs-code-prettier-eslint.prettierLast": false,
+
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	"eslint.codeAction.showDocumentation": {
+		"enable": true
+	}
+}
