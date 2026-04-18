@@ -74,11 +74,11 @@ export class TwoSum {
 	public fifthSolution(): number[] {
 		let start: number = 0
 		let end: number = this.nums.length - 1
-		let copyArray = this.nums.map((value, index) => ({value, index}))
+		let copyArray = this.nums.mapPolyfill((value, index) => ({value, index}))
 		let sortedArray = copyArray.sort((a, b) => a.value - b.value)
 
 		while (start < end) {
-			let sum: number = sortedArray[start].value + sortedArray[end].value
+			const sum: number = sortedArray[start].value + sortedArray[end].value
 			if (sum === this.target) {
 				return [sortedArray[start].index, sortedArray[end].index]
 			} else {
