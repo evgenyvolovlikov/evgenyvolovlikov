@@ -6,6 +6,19 @@ import prettierPlugin from 'eslint-plugin-prettier'
 
 export default tseslint.config(
 	{
+		ignores: [
+			'build',
+			'.angular',
+			'.cache',
+			'out-tsc/',
+			'node_modules',
+			'.vscode',
+			'.husky',
+			'pnpm-lock.yaml',
+			'*.log'
+		]
+	},
+	{
 		plugins: {
 			prettier: prettierPlugin
 		}
