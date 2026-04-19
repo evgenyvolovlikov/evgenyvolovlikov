@@ -47,9 +47,7 @@ export class ContainerWithMostWater {
 		return maxArea
 	}
 
-	public thirdSolution() {
-		
-	}
+	public thirdSolution() {}
 
 	static quickSolve(heights: number[], methodName: WaterMethodType): number {
 		const instance = new ContainerWithMostWater(heights)

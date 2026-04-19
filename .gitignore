@@ -1,18 +1,30 @@
-# Angular specific
+# Зависимости
+node_modules/
+.pnpm-debug.log*
+
+# Сборка
+dist/
+build/
+.angular/
+
+# Логи и временные файлы
+npm-debug.log
+.tmp/
+.cache/
+
+# Настройки IDE
+.vscode/
+*.swp
+*.DS_Store
+
+# Angular
 /dist/
 /out-tsc/
 /tmp/
-/coverage/
-/e2e/test-output/
 /.angular/
 .angular/
 
-# Node modules and dependency files
-/node_modules/
-/package-lock.json
-/yarn.lock
-
-# Environment files
+# Environment файлы
 /.env
 
 # Angular CLI and build artefacts
@@ -21,11 +33,6 @@
 
 # TypeScript cache
 *.tsbuildinfo
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # App
 /app

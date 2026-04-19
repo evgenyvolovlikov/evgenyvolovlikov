@@ -8,3 +8,7 @@
 * [@angular/platform-browser](https://www.npmjs.com/package/@angular/platform-browser) - Модуль для запуска приложения в браузере
 
 * [@angular/router](https://www.npmjs.com/package/@angular/router) - Официальный роутер для навигации между страницами
+
+* [@angular/forms](https://www.npmjs.com/package/@angular/forms) - Модуль дл работы с формами: валидация, отслеживание изменений и сбор данных
+
+* [tslib](https://www.npmjs.com/package/tslib) - библиотека для TypeScript при компиляции кода в JavaScript
