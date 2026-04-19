@@ -1,6 +1,6 @@
 Array.prototype.mapPolyfill = function <T, U>(
 	callback: (value: T, index: number, array: T[]) => U,
-	thisArg?: any
+	thisArg?: unknown
 ): U[] {
 	if (this == null) {
 		throw new Error('Array.prototype.mapPolyfill был вазван на null или undefined')

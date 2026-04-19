@@ -72,17 +72,21 @@ export class TwoSum {
 
 	// Время: O(n log n) Память: O(n)
 	public fifthSolution(): number[] {
-		let start: number = 0
+		let start = 0
 		let end: number = this.nums.length - 1
-		let copyArray = this.nums.mapPolyfill((value, index) => ({value, index}))
-		let sortedArray = copyArray.sort((a, b) => a.value - b.value)
+		const copyArray = this.nums.mapPolyfill((value, index) => ({value, index}))
+		const sortedArray = copyArray.sort((a, b) => a.value - b.value)
 
 		while (start < end) {
 			const sum: number = sortedArray[start].value + sortedArray[end].value
 			if (sum === this.target) {
 				return [sortedArray[start].index, sortedArray[end].index]
 			} else {
-				sum < this.target ? start++ : end--
+				if (sum < this.target) {
+					start++
+				} else {
+					end--
+				}
 			}
 		}
 

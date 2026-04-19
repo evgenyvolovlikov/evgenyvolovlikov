@@ -13,12 +13,12 @@ export class ContainerWithMostWater {
 
 	// Время: O(n²) Память: O(1)
 	public firstSolution(): number {
-		let maxArea: number = 0
+		let maxArea = 0
 		for (let i = 0; i < this.heights.length; i++) {
 			for (let j = i + 1; j < this.heights.length; j++) {
-				let height = Math.min(this.heights[i], this.heights[j])
-				let width = j - i
-				let area = height * width
+				const height = Math.min(this.heights[i], this.heights[j])
+				const width = j - i
+				const area = height * width
 				maxArea = Math.max(maxArea, area)
 			}
 		}
@@ -27,14 +27,14 @@ export class ContainerWithMostWater {
 
 	// Время: O(n) Память: O(1)
 	public secondSolution(): number {
-		let start: number = 0
+		let start = 0
 		let end: number = this.heights.length - 1
-		let maxArea: number = 0
+		let maxArea = 0
 
 		while (start < end) {
-			let height = Math.min(this.heights[start], this.heights[end])
-			let width = end - start
-			let area = height * width
+			const height = Math.min(this.heights[start], this.heights[end])
+			const width = end - start
+			const area = height * width
 			maxArea = Math.max(maxArea, area)
 
 			if (this.heights[start] < this.heights[end]) {
@@ -46,8 +46,6 @@ export class ContainerWithMostWater {
 
 		return maxArea
 	}
-
-	public thirdSolution() {}
 
 	static quickSolve(heights: number[], methodName: WaterMethodType): number {
 		const instance = new ContainerWithMostWater(heights)
