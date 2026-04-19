@@ -1,4 +1,4 @@
 {
 	"src/**/*.{ts,html,scss,json}": ["bash -c 'pnpm run format:check'"],
-	"src/**/*.ts": ["bash -c 'pnpm run lint:fix'"]
+	"src/**/*.ts": ["bash -c 'pnpm run lint:fix'", "bash -c 'pnpm run type:check'"]
 }
