@@ -1,0 +1,11 @@
+/* stylelint-disable color-no-hex */
+:root {
+	/* Базовая палитра (светлая тема по умолчанию) */
+	--bg-color: #fff;
+	--text-color: #000;
+	--border-color: #000;
+
+	/* Типографика */
+	--font-main: 'Inter', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', monospace;
+}

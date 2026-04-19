@@ -3,7 +3,7 @@ import {Component} from '@angular/core'
 	selector: 'app-page-home',
 	imports: [],
 	standalone: true,
-	templateUrl: './homepage.component.html',
-	styleUrl: './homepage.component.scss'
+	templateUrl: './home.component.html',
+	styleUrl: './home.component.scss'
 })
 export class HomePageComponent {}

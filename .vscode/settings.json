@@ -5,7 +5,8 @@
 	"editor.formatOnSave": true,
 	"editor.formatOnSaveMode": "file",
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": "explicit"
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.stylelint": "always"
 	},
 
 	"js/ts.format.semicolons": "remove",
@@ -19,6 +20,8 @@
 	"prettier.bracketSameLine": true,
 	"prettier.printWidth": 88,
 	"prettier.semi": false,
+
+	"stylelint.validate": ["css", "scss"],
 
 	"css.completion.completePropertyWithSemicolon": false,
 	"vs-code-prettier-eslint.prettierLast": false,

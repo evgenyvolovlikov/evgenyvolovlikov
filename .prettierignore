@@ -1,5 +1,13 @@
-node_modules
-pnpm-lock.yaml
+# Сборка и кэш
 build/
 .angular/
+.cache/
+
+# Системные файлы и настройки
 .vscode/
+.husky/
+pnpm-lock.yaml
+
+# Файлы, которые не нужно форматировать
+coverage/
+*.log

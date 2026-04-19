@@ -1,3 +1,77 @@
-@use 'reset';
-@use 'variables';
-@use 'global';
+@use './abstract/variables';
+@use './base/reset';
+
+/* 1. Настройки корневых элементов */
+html {
+	height: 100%;
+
+	/* Запрещает горизонтальный скролл на корню */
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+
+	/* Убирает задержку клика в мобильных браузерах */
+	touch-action: manipulation;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: var(--font-main);
+
+	/* Улучшение отрисовки шрифтов */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	min-height: 100%;
+
+	/* Убираем горизонтальный скролл, если контент вылезет */
+	overflow-x: hidden;
+	text-rendering: optimizelegibility;
+
+	/* Плавная смена темы */
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+/* 2. Глобальные утилиты (Utility Classes) */
+
+// Универсальная ч/б граница
+.border {
+	border: 1px solid var(--border-color);
+}
+
+// Утилита для скрытия элементов, но сохранения доступности для скринридеров
+.visually-hidden {
+	border: 0;
+	clip-path: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+// Контейнер для центрирования контента (классика)
+.container {
+	margin: 0 auto;
+	max-width: 1440px; // Можно менять под проект
+	padding: 0 16px; // Отступы по бокам на мобилках
+	width: 100%;
+}
+
+/* 3. Кастомизация скроллбара (опционально, для ч/б стиля) */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--text-color);
+	border: 2px solid var(--bg-color);
+	border-radius: 10px;
+}

@@ -1,31 +1,35 @@
-# Зависимости
+# --- Зависимости ---
 node_modules/
-.pnpm-debug.log*
+.pnpm-store/
+pnpm-lock.yaml.pnpm-debug.log*
 
-# Сборка
+
+# --- Сборка и временные файлы ---
 dist/
 build/
+out-tsc/
 .angular/
-
-# Логи и временные файлы
-npm-debug.log
-.tmp/
 .cache/
+.tmp/
+*.tsbuildinfo
 
-# Настройки IDE
-.vscode/
+# --- Логи ---
+*.log
+pnpm-debug.log*
+
+# --- Настройки IDE ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+.idea/
 *.swp
 *.DS_Store
 
-# Angular
-/dist/
-/out-tsc/
-/tmp/
-/.angular/
-.angular/
-
-# Environment файлы
-/.env
+# --- Environment (Секреты) ---
+.env
+.env.*
+!.env.example
 
 # Angular CLI and build artefacts
 /.angular-cli.json

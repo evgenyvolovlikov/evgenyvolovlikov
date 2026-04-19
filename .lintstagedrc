@@ -1,4 +1,12 @@
 {
-	"src/**/*.{ts,html,scss,json}": ["bash -c 'pnpm run format:check'"],
-	"src/**/*.ts": ["bash -c 'pnpm run lint:fix'", "bash -c 'pnpm run type:check'"]
+	"src/**/*.{ts,html,scss,json}": [
+		"prettier --write"
+	],
+	"src/**/*.ts": [
+		"eslint --fix",
+		"bash -c 'pnpm type:check'"
+	],
+	"src/**/*.scss": [
+		"stylelint --fix"
+	]
 }

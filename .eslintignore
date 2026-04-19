@@ -1,0 +1,16 @@
+# Сборка и кэш
+build
+.angular
+.cache
+out-tsc/
+
+# Зависимости
+node_modules
+
+# Системные файлы
+.vscode
+.husky
+
+# Специфические файлы
+pnpm-lock.yaml
+*.log
