@@ -3,7 +3,9 @@
 	"version": 1,
 	"cli": {
 		"packageManager": "pnpm",
-		"schematicCollections": ["angular-eslint"]
+		"schematicCollections": [
+			"angular-eslint"
+		]
 	},
 	"newProjectRoot": "projects",
 	"projects": {
@@ -26,7 +28,9 @@
 						"tsConfig": "tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
 						"outputPath": "build",
-						"styles": ["src/app/styles/index.scss"],
+						"styles": [
+							"src/app/styles/index.scss"
+						],
 						"assets": [
 							{
 								"glob": "**/*",
@@ -72,7 +76,10 @@
 				"lint": {
 					"builder": "@angular-eslint/builder:lint",
 					"options": {
-						"lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+						"lintFilePatterns": [
+							"src/**/*.ts",
+							"src/**/*.html"
+						]
 					}
 				}
 			}
