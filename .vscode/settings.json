@@ -16,13 +16,18 @@
 	"prettier.singleQuote": true,
 	"prettier.arrowParens": "avoid",
 	"prettier.trailingComma": "none",
-	"prettier.bracketSameLine": false,
+	"prettier.bracketSameLine": true,
 	"prettier.printWidth": 88,
 	"prettier.semi": false,
 
 	"css.completion.completePropertyWithSemicolon": false,
 	"vs-code-prettier-eslint.prettierLast": false,
 
+	"[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
 	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},

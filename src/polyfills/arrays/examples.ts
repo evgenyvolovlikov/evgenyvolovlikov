@@ -1,3 +1,4 @@
+// mapPolyfill
 const mappedArray = [1, 2, 3].mapPolyfill((element, index, array) => {
 	return {
 		element,
@@ -27,4 +28,10 @@ const mappedArrayWithCtx = [1, 2, 3].mapPolyfill(
 			}
 		}
 	}
+)
+
+// reducePolyfillconst
+const reduced = [1, 2, 3].reducePolyfill(
+	(acc, val, i, array) => ({accumulator: acc.accumulator + val, i, array}),
+	{accumulator: 0}
 )
