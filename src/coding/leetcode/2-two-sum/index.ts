@@ -28,12 +28,12 @@ export class TwoSum {
 	public secondSolution(): number[] {
 		const map = new Map<number, number>()
 		for (let i = 0; i < this.nums.length; i++) {
-			const complement = this.target - this.nums[i]
+			const num = this.nums[i]
+			const complement = this.target - num
 			if (map.has(complement)) {
-				return [map.get(complement)!, i]
-			} else {
-				map.set(this.nums[i], i)
+				return [map.get(complement) as number, i]
 			}
+			map.set(num, i)
 		}
 		return []
 	}
@@ -59,13 +59,14 @@ export class TwoSum {
 		let result: number[] = []
 		this.nums.some((el, i) => {
 			const complement = this.target - el
-			if (map.has(complement)) {
-				result = [map.get(complement)!, i]
+			const complementIndex = map.get(complement)
+			if (complementIndex !== undefined) {
+				result = [complementIndex, i]
 				return true
-			} else {
-				map.set(el, i)
-				return false
 			}
+
+			map.set(el, i)
+			return false
 		})
 		return result
 	}

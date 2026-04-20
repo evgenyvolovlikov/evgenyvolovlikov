@@ -24,7 +24,7 @@ export class ValidParentheses {
 		const stack: (keyof typeof parens)[] = []
 
 		for (const char of this.str) {
-			if (parens[char]) {
+			if (char in parens) {
 				stack.push(char as keyof typeof parens)
 			} else {
 				const lastOpen = stack.pop()
@@ -58,11 +58,14 @@ export class ValidParentheses {
 	}
 
 	// Время: O(n²) Память: O(1)
-	fourthSolution(s: string = this.str): boolean {
-		if (s === '') return true
-		const next = s.replace('()', '').replace('[]', '').replace('{}', '')
-		if (next === s) return false
-		return this.fourthSolution(next)
+	fourthSolution(): boolean {
+		const recurse = (s: string): boolean => {
+			if (s === '') return true
+			const next = s.replace(/(\(\)|\[\]|\{\})/g, '')
+			if (next === s) return false
+			return recurse(next)
+		}
+		return recurse(this.str)
 	}
 
 	static quickSolve(
@@ -70,8 +73,8 @@ export class ValidParentheses {
 		methodName: ParenthesesMethodType = 'firstSolution'
 	): boolean {
 		const instance = new ValidParentheses(str)
-		const method = instance[methodName] as () => boolean
-		return method.call(instance)
+		const method = instance[methodName]
+		return (method as () => boolean).call(instance)
 	}
 }
 

@@ -1,7 +1,6 @@
 {
 	"extends": [
-		"stylelint-config-standard-scss",
-		"stylelint-config-prettier-scss"
+		"stylelint-config-standard-scss"
 	],
 	"plugins": [
 		"stylelint-order"
@@ -12,10 +11,11 @@
 		"selector-class-pattern": null,
 		"at-rule-no-unknown": null,
 		"scss/at-rule-no-unknown": true,
-		"color-no-hex": null,
 		"color-named": "never",
 		"max-nesting-depth": 3,
 		"declaration-no-important": true,
+		"declaration-block-no-duplicate-properties": true,
+		"block-no-empty": true,
 		"declaration-block-no-redundant-longhand-properties": true,
 		"no-duplicate-selectors": true,
 		"unit-no-unknown": true

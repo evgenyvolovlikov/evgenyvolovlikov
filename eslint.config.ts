@@ -1,8 +1,7 @@
 import eslint from '@eslint/js'
-import tseslint from 'typescript-eslint'
 import angular from 'angular-eslint'
 import prettierConfig from 'eslint-config-prettier'
-import prettierPlugin from 'eslint-plugin-prettier'
+import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
 	{
@@ -13,68 +12,52 @@ export default tseslint.config(
 			'out-tsc/',
 			'node_modules',
 			'.vscode',
-			'.husky',
-			'pnpm-lock.yaml',
-			'*.log'
+			'pnpm-lock.yaml'
 		]
-	},
-	{
-		plugins: {
-			prettier: prettierPlugin
-		}
 	},
 	{
 		files: ['**/*.ts'],
 		extends: [
 			eslint.configs.recommended,
-			...tseslint.configs.recommended,
+			...tseslint.configs.strict,
 			...tseslint.configs.stylistic,
 			...angular.configs.tsRecommended,
 			prettierConfig
 		],
 		processor: angular.processInlineTemplates,
 		rules: {
-			'prettier/prettier': 'error',
+			semi: ['error', 'never'],
 
-			'no-multiple-empty-lines': [
+			'@typescript-eslint/no-explicit-any': 'warn',
+
+			'@typescript-eslint/no-extraneous-class': [
 				'error',
-				{
-					max: 2,
-					maxEOF: 0,
-					maxBOF: 0
-				}
+				{allowWithDecorator: true}
 			],
 
 			'@angular-eslint/directive-selector': [
 				'error',
-				{
-					type: 'attribute',
-					prefix: 'app',
-					style: 'camelCase'
-				}
+				{type: 'attribute', prefix: 'app', style: 'camelCase'}
 			],
 			'@angular-eslint/component-selector': [
 				'error',
-				{
-					type: 'element',
-					prefix: 'app',
-					style: 'kebab-case'
-				}
+				{type: 'element', prefix: 'app', style: 'kebab-case'}
 			],
-			semi: ['error', 'never']
+
+			'@typescript-eslint/no-unused-vars': ['warn', {argsIgnorePattern: '^_'}],
+			'@angular-eslint/no-empty-lifecycle-method': 'warn'
 		}
 	},
 	{
 		files: ['**/*.html'],
 		extends: [
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			...(angular.configs.templateRecommended as any[]),
-			...angular.configs.templateAccessibility,
-			prettierConfig
+			...(angular.configs.templateAccessibility as any[]),
+			prettierConfig as any
 		],
 		rules: {
-			'prettier/prettier': ['error', {parser: 'angular'}],
-			'no-multiple-empty-lines': ['error', {max: 2}]
+			'@angular-eslint/template/no-negated-async': 'error',
+			'@angular-eslint/template/no-duplicate-attributes': 'error',
 		}
 	}
 )
