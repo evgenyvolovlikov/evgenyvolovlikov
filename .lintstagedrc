@@ -1,9 +1,10 @@
 {
-	"src/**/*.{ts,html,scss,json}": [
+	"src/**/*.{html,scss,json}": [
 		"prettier --write"
 	],
 	"src/**/*.ts": [
 		"eslint --fix",
+		"prettier --write",
 		"bash -c 'pnpm type:check'"
 	],
 	"src/**/*.scss": [
