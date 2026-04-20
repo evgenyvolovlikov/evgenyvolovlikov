@@ -1,2 +1,7 @@
-<h1>Angular is working</h1>
+<app-input
+	iconUrl="icons/mail.svg"
+	(controlValue)="onInputChange($event)"
+/>
+
+<app-password-input (controlValue)="onPasswordInputChange($event)" />
 <router-outlet />
