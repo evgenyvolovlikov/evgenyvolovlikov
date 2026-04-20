@@ -1,12 +1,10 @@
 import {Component} from '@angular/core'
-import {RouterOutlet} from '@angular/router'
-import {InputComponent} from '@shared/ui/input'
-import {PasswordInput} from '@shared/ui/password-input'
+import {PublicLayoutComponent} from './layouts/public'
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [RouterOutlet, InputComponent, PasswordInput],
+	imports: [PublicLayoutComponent],
 	templateUrl: './app.component.html'
 })
 export class AppComponent {
