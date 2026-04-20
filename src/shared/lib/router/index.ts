@@ -1,1 +1,1 @@
-export {AppRoutes} from './routes.enum'
+export {ROUTE_CONSTANTS} from './routes'

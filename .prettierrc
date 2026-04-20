@@ -5,7 +5,8 @@
 	"bracketSpacing": false,
 	"arrowParens": "avoid",
 	"trailingComma": "none",
-	"bracketSameLine": true,
+	"bracketSameLine": false,
+	"singleAttributePerLine": true,
 	"singleQuote": true,
 	"printWidth": 88,
 	"overrides": [

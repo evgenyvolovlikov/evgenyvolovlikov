@@ -37,3 +37,6 @@ pnpm-debug.log*
 
 # TypeScript cache
 *.tsbuildinfo
+
+# Ignored Artefacts
+/ignored
