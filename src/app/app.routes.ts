@@ -1,10 +1,19 @@
 import {Routes} from '@angular/router'
-import {HomePageComponent} from '@pages/home'
 import {ROUTE_CONSTANTS} from '@shared/lib/router'
+import {PublicLayoutComponent} from './layouts/public'
+import {PrivateLayoutComponent} from './layouts/private'
 
 export const appRoutes: Routes = [
 	{
-		path: ROUTE_CONSTANTS.HOME,
-		component: HomePageComponent
+		path: ROUTE_CONSTANTS.PUBLIC,
+		component: PublicLayoutComponent
+	},
+	{
+		path: ROUTE_CONSTANTS.PRIVATE,
+		component: PrivateLayoutComponent
+	},
+	{
+		path: '**',
+		redirectTo: ROUTE_CONSTANTS.PUBLIC
 	}
 ]
