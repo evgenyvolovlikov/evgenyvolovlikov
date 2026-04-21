@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router'
 import {HomePageComponent} from '@pages/home'
-import {AppRoutes} from '@shared/lib/router'
+import {AppRoutes} from '@shared/const/router'
 
 export const appRoutes: Routes = [
 	{
