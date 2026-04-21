@@ -4,6 +4,7 @@ import {PublicLayoutComponent} from './layouts/public'
 import {PrivateLayoutComponent} from './layouts/private'
 import {LoginPageComponent} from '@pages/login'
 import {DashboardPageComponent} from '@pages/dashboard'
+import {authGuard} from '@shared/guards/auth.guards'
 
 export const appRoutes: Routes = [
 	{
@@ -23,6 +24,7 @@ export const appRoutes: Routes = [
 	{
 		path: ROUTE_CONSTANTS.PRIVATE,
 		component: PrivateLayoutComponent,
+		canActivate: [authGuard],
 		children: [
 			{
 				path: ROUTE_CONSTANTS.DASHBOARD,
@@ -32,6 +34,6 @@ export const appRoutes: Routes = [
 	},
 	{
 		path: '**',
-		redirectTo: ROUTE_CONSTANTS.PRIVATE
+		redirectTo: ROUTE_CONSTANTS.PUBLIC
 	}
 ]
