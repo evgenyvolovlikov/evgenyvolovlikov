@@ -1,0 +1,19 @@
+.login__heading {
+	color: #fff;
+	font-size: 32px;
+	font-weight: 600;
+	padding-bottom: 4px;
+	text-align: center;
+}
+
+.login__form {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	justify-content: center;
+}
+
+.login__form--control {
+	width: 450px;
+}
