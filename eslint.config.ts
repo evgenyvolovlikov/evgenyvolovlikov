@@ -32,7 +32,7 @@ export default tseslint.config(
 
 			'@typescript-eslint/no-extraneous-class': [
 				'error',
-				{allowWithDecorator: true}
+				{allowWithDecorator: true, allowStaticOnly: true}
 			],
 
 			'@angular-eslint/directive-selector': [
@@ -57,7 +57,7 @@ export default tseslint.config(
 		],
 		rules: {
 			'@angular-eslint/template/no-negated-async': 'error',
-			'@angular-eslint/template/no-duplicate-attributes': 'error',
+			'@angular-eslint/template/no-duplicate-attributes': 'error'
 		}
 	}
 )
