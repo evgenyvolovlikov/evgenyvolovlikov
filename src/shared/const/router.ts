@@ -3,5 +3,8 @@ export enum AppRoutes {
 	// Авторизация | Регистрация
 	AUTH = 'auth',
 	LOGIN = 'login',
-	REGISTER = 'register'
+	REGISTER = 'register',
+
+	// Профиль
+	PROFILE = 'profile'
 }

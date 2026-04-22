@@ -1,6 +1,6 @@
-import {Component, computed, signal} from '@angular/core'
+import {Component, computed, inject, signal} from '@angular/core'
 import {FormsModule} from '@angular/forms'
-import {RouterLink} from '@angular/router'
+import {Router, RouterLink} from '@angular/router'
 import {AppRoutes} from '@shared/const/router'
 import {ButtonComponent} from '@shared/ui/button'
 import {InputComponent} from '@shared/ui/input'
@@ -12,6 +12,7 @@ import {InputComponent} from '@shared/ui/input'
 	imports: [FormsModule, RouterLink, InputComponent, ButtonComponent]
 })
 export class RegisterByEmailComponent {
+	private router = inject(Router)
 	protected readonly AppRoutes = AppRoutes
 
 	email = signal('')
@@ -57,6 +58,8 @@ export class RegisterByEmailComponent {
 			await new Promise(resolve =>
 				setTimeout(() => resolve(requestData), 2000)
 			).then(console.log)
+
+			await this.router.navigate([AppRoutes.PROFILE])
 		} catch (error) {
 			console.error('Ошибка при регистрации', error)
 		} finally {

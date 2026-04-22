@@ -1,0 +1,31 @@
+<aside
+	class="sidebar"
+	[class.sidebar--collapsed]="collapsed()"
+>
+	<button
+		(click)="onToggle()"
+		class="sidebar__toggle"
+		type="button"
+	>
+		{{ collapsed() ? '>' : '<' }}
+	</button>
+	<nav class="sidebar__nav">
+		<a
+			routerLink="/"
+			routerLinkActive="sidebar__link--active"
+			[routerLinkActiveOptions]="{exact: true}"
+			class="sidebar__link"
+		>
+			<span class="sidebar__icon">🏠</span>
+			<span class="sidebar__text">Главная</span>
+		</a>
+		<a
+			routerLink="/profile"
+			routerLinkActive="sidebar__link--active"
+			class="sidebar__link"
+		>
+			<span class="sidebar__icon">👤</span>
+			<span class="sidebar__text">Профиль</span>
+		</a>
+	</nav>
+</aside>

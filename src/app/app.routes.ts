@@ -1,4 +1,5 @@
 import {Routes} from '@angular/router'
+import {ProfilePageComponent} from '@pages/profile'
 import {AppRoutes} from '@shared/const/router'
 import {AuthLayoutComponent} from '@shared/layouts/auth'
 
@@ -23,6 +24,10 @@ export const appRoutes: Routes = [
 				pathMatch: 'full'
 			}
 		]
+	},
+	{
+		path: AppRoutes.PROFILE,
+		component: ProfilePageComponent
 	},
 	{path: '**', redirectTo: AppRoutes.AUTH}
 ]
