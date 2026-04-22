@@ -1,0 +1,59 @@
+<form class="auth-form">
+	<h1 class="auth-form__title">Регистрация</h1>
+
+	<div class="auth-form__field">
+		<app-input
+			placeholder="Как вас зовут?"
+			(controlValue)="username.set($event)"
+		/>
+	</div>
+
+	<div class="auth-form__field">
+		<app-input
+			type="email"
+			placeholder="Email"
+			(controlValue)="email.set($event)"
+		/>
+	</div>
+
+	<div class="auth-form__field">
+		<app-input
+			type="password"
+			placeholder="Пароль"
+			(controlValue)="password.set($event)"
+		/>
+	</div>
+
+	<div class="auth-form__field">
+		<app-input
+			type="password"
+			placeholder="Повторите пароль"
+			(controlValue)="confirmPassword.set($event)"
+		/>
+		@if (showPasswordMismatchError()) {
+			<span style="color: red; font-size: 12px; margin-top: 4px; display: block">
+				Пароли не совпадают
+			</span>
+		}
+	</div>
+
+	<div class="auth-form__actions">
+		<app-button
+			[isDisabled]="!isFormValid()"
+			[isLoading]="isLoading()"
+			(click)="onRegister()"
+		>
+			Создать аккаунт
+		</app-button>
+	</div>
+
+	<div class="auth-form__footer">
+		<span>Уже есть аккаунт?</span>
+		<a
+			[routerLink]="[AppRoutes.MAIN, AppRoutes.AUTH, AppRoutes.LOGIN]"
+			class="auth-form__link"
+		>
+			Войти
+		</a>
+	</div>
+</form>

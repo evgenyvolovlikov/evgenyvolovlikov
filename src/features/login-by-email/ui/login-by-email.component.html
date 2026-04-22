@@ -1,0 +1,38 @@
+<form class="auth-form">
+	<h1 class="auth-form__title">Войти</h1>
+
+	<div class="auth-form__field">
+		<app-input
+			type="email"
+			placeholder="Email"
+			(controlValue)="onEmailInput($event)"
+		/>
+	</div>
+
+	<div class="auth-form__field">
+		<app-input
+			type="password"
+			placeholder="Пароль"
+			(controlValue)="onPasswordInput($event)"
+		/>
+	</div>
+
+	<div class="auth-form__actions">
+		<app-button
+			[isDisabled]="!isFormValid()"
+			(click)="onSubmit()"
+		>
+			Войти
+		</app-button>
+	</div>
+
+	<div class="auth-form__footer">
+		<span>Нет аккаунта ?</span>
+		<a
+			[routerLink]="[AppRoutes.MAIN, AppRoutes.AUTH, AppRoutes.REGISTER]"
+			class="auth-form__link"
+		>
+			Зарегистрироваться
+		</a>
+	</div>
+</form>

@@ -1,1 +1,12 @@
-<button>Button</button>
+<button
+	[disabled]="isDisabled || isLoading"
+	[type]="type"
+	class="button"
+	[class.btn--loading]="isLoading"
+>
+	@if (isLoading) {
+		<span class="button__spinner"></span>
+	} @else {
+		<ng-content />
+	}
+</button>

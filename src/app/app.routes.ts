@@ -1,16 +1,21 @@
 import {Routes} from '@angular/router'
 import {AppRoutes} from '@shared/const/router'
-import {MainLayoutComponent} from '@shared/layouts/main'
+import {AuthLayoutComponent} from '@shared/layouts/auth'
 
 export const appRoutes: Routes = [
 	{
 		path: AppRoutes.AUTH,
-		component: MainLayoutComponent,
+		component: AuthLayoutComponent,
 		children: [
 			{
 				path: AppRoutes.LOGIN,
 				loadComponent: () =>
 					import('@pages/login').then(c => c.LoginPageComponent)
+			},
+			{
+				path: AppRoutes.REGISTER,
+				loadComponent: () =>
+					import('@pages/register').then(c => c.RegisterPageComponent)
 			},
 			{
 				path: '**',
@@ -19,5 +24,5 @@ export const appRoutes: Routes = [
 			}
 		]
 	},
-	{path: '**', redirectTo: AppRoutes.MAIN}
+	{path: '**', redirectTo: AppRoutes.AUTH}
 ]
