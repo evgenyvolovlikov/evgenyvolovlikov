@@ -1,10 +1,23 @@
 import {Routes} from '@angular/router'
-import {HomePageComponent} from '@pages/home'
 import {AppRoutes} from '@shared/const/router'
+import {MainLayoutComponent} from '@shared/layouts/main'
 
 export const appRoutes: Routes = [
 	{
-		path: AppRoutes.MAIN,
-		component: HomePageComponent
-	}
+		path: AppRoutes.AUTH,
+		component: MainLayoutComponent,
+		children: [
+			{
+				path: AppRoutes.LOGIN,
+				loadComponent: () =>
+					import('@pages/login').then(c => c.LoginPageComponent)
+			},
+			{
+				path: '**',
+				redirectTo: AppRoutes.LOGIN,
+				pathMatch: 'full'
+			}
+		]
+	},
+	{path: '**', redirectTo: AppRoutes.MAIN}
 ]
