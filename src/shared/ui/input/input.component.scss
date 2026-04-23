@@ -1,6 +1,24 @@
-input {
-	border: 1px solid;
-	font-size: 16px;
-	padding: 8px;
+:host {
+	display: block; // Позволяет компоненту занимать всю доступную ширину
 	width: 100%;
+}
+
+input {
+	background: #fff;
+	border: var(--input-border, 1px solid #000);
+	border-radius: var(--input-radius, 8px);
+	box-sizing: border-box; // Чтобы padding не «раздувал» ширину
+	font-size: 16px;
+
+	// Используем переменные, которые мы прописали в логине/регистрации
+	height: var(--input-height, 48px);
+	outline: none;
+	padding: 0 16px; // Горизонтальные отступы внутри
+	transition: border-color 0.2s;
+	width: 100%; // Теперь он растянется на 100% от своего хоста
+
+	&:focus {
+		border-color: var(--input-focus-color, #000);
+		box-shadow: 0 0 0 1px #000;
+	}
 }

@@ -5,7 +5,6 @@ import {LoginByEmailComponent} from '@features/login-by-email'
 	selector: 'app-login',
 	standalone: true,
 	imports: [LoginByEmailComponent],
-	templateUrl: './login.component.html',
-	styleUrl: './login.component.scss'
+	templateUrl: './login.component.html'
 })
 export class LoginPageComponent {}

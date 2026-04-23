@@ -1,4 +1,7 @@
-<form class="auth-form">
+<form
+	class="auth-form"
+	(ngSubmit)="onRegister()"
+>
 	<h1 class="auth-form__title">Регистрация</h1>
 
 	<div class="auth-form__field">
@@ -31,9 +34,7 @@
 			(controlValue)="confirmPassword.set($event)"
 		/>
 		@if (showPasswordMismatchError()) {
-			<span style="color: red; font-size: 12px; margin-top: 4px; display: block">
-				Пароли не совпадают
-			</span>
+			<span class="auth-form__error">Пароли не совпадают</span>
 		}
 	</div>
 
@@ -41,7 +42,7 @@
 		<app-button
 			[isDisabled]="!isFormValid()"
 			[isLoading]="isLoading()"
-			(click)="onRegister()"
+			type="submit"
 		>
 			Создать аккаунт
 		</app-button>

@@ -5,7 +5,6 @@ import {RegisterByEmailComponent} from '@features/register-by-email'
 	selector: 'app-register',
 	standalone: true,
 	imports: [RegisterByEmailComponent],
-	templateUrl: './register.component.html',
-	styleUrl: './register.component.scss'
+	templateUrl: './register.component.html'
 })
 export class RegisterPageComponent {}

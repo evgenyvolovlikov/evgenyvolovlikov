@@ -1,4 +1,7 @@
-<form class="auth-form">
+<form
+	class="auth-form"
+	(ngSubmit)="onSubmit()"
+>
 	<h1 class="auth-form__title">Войти</h1>
 
 	<div class="auth-form__field">
@@ -20,14 +23,14 @@
 	<div class="auth-form__actions">
 		<app-button
 			[isDisabled]="!isFormValid()"
-			(click)="onSubmit()"
+			type="submit"
 		>
 			Войти
 		</app-button>
 	</div>
 
 	<div class="auth-form__footer">
-		<span>Нет аккаунта ?</span>
+		<span>Нет аккаунта?</span>
 		<a
 			[routerLink]="[AppRoutes.MAIN, AppRoutes.AUTH, AppRoutes.REGISTER]"
 			class="auth-form__link"

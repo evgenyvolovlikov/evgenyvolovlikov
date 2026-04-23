@@ -1,20 +1,37 @@
-:host.auth-layout {
+:host {
 	align-items: center;
-	background: #f0f2f5;
-	box-sizing: border-box;
+	background-color: #fff;
 	display: flex;
 	justify-content: center;
 	min-height: 100vh;
-	padding: 24px;
-	width: 100%;
+	overflow-x: hidden;
+	width: 100vw;
 }
 
 .auth-layout {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+
 	&__container {
-		border-radius: 12px;
-		box-shadow: 0 8px 24px rgb(0 0 0 / 5%);
-		max-width: 400px;
-		padding: 40px;
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		max-width: 360px;
 		width: 100%;
+	}
+}
+
+@media (width <= 767px) {
+	:host {
+		align-items: flex-start;
+		padding-top: 10vh;
+	}
+
+	.auth-layout__container {
+		max-width: 100%;
+		padding: 0 32px;
 	}
 }
