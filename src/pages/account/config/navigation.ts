@@ -11,6 +11,12 @@ export const ACCOUNT_LINKS: NavLink[] = [
 	{
 		label: 'Курсы',
 		route: `/${[AppRoutes.ACCOUNT, AppRoutes.COURSES].join('/')}`,
-		icon: '📖'
+		icon: '📚'
+	},
+
+	{
+		label: 'Настройки',
+		route: `/${[AppRoutes.ACCOUNT, AppRoutes.EDIT].join('/')}`,
+		icon: '⚙️'
 	}
 ]

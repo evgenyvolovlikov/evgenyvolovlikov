@@ -1,13 +1,7 @@
 <div class="main-layout">
-	<div class="main-layout__header">
-		<ng-content select="[header]" />
-	</div>
+	<app-header />
 
-	<main class="main-layout__content">
-		<router-outlet />
-	</main>
+	<router-outlet />
 
-	<div class="main-layout__footer">
-		<ng-content select="[footer]" />
-	</div>
+	<app-footer />
 </div>

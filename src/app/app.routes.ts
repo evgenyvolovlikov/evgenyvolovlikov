@@ -1,13 +1,31 @@
 import {Routes} from '@angular/router'
 import {AccountPageComponent} from '@pages/account'
-import {AppRoutes} from '@shared/config'
+import {HomePageComponent} from '@pages/home'
+import {AppRoutes, getRouteCourse} from '@shared/config'
 
 import {AuthLayoutComponent} from '@shared/layouts/auth'
+import {MainLayoutComponent} from '@shared/layouts/main'
 
 export const appRoutes: Routes = [
 	{
+		path: AppRoutes.MAIN,
+		component: MainLayoutComponent,
+		children: [
+			{
+				path: AppRoutes.MAIN,
+				component: HomePageComponent
+			},
+			{
+				path: getRouteCourse(':id'),
+				loadComponent: () =>
+					import('@pages/course').then(m => m.CoursePageComponent)
+			}
+		]
+	},
+
+	{
 		path: AppRoutes.AUTH,
-		component: AuthLayoutComponent,
+		component: AuthLayoutComponent, // Рефактор
 		children: [
 			{
 				path: AppRoutes.LOGIN,
@@ -41,11 +59,16 @@ export const appRoutes: Routes = [
 					import('@pages/courses').then(c => c.CoursesPageComponent)
 			},
 			{
+				path: AppRoutes.EDIT,
+				loadComponent: () =>
+					import('@pages/edit').then(c => c.EditPageComponent)
+			},
+			{
 				path: '**',
 				redirectTo: AppRoutes.PROFILE,
 				pathMatch: 'full'
 			}
 		]
 	},
-	{path: '**', redirectTo: AppRoutes.AUTH}
+	{path: '**', redirectTo: AppRoutes.MAIN}
 ]

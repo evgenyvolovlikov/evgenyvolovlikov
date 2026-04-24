@@ -1,1 +1,38 @@
-<header>Header Component</header>
+<header class="header">
+	<div class="header__container">
+		<a
+			routerLink="/"
+			class="logo"
+		>
+			Evgeny Volovlikov
+		</a>
+
+		<nav class="nav">
+			<ul class="nav__list">
+				<li>
+					<a
+						routerLink="/course/angular"
+						routerLinkActive="active"
+						>Курс по Angular</a
+					>
+				</li>
+				<li>
+					<a
+						routerLink="/course/angular"
+						routerLinkActive="active"
+						>Подготовка к собеседованию</a
+					>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="actions">
+			<button
+				class="btn-login"
+				routerLink="/auth/login"
+			>
+				Войти
+			</button>
+		</div>
+	</div>
+</header>
