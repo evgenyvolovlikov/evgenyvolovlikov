@@ -8,4 +8,20 @@ import {RouterLink} from '@angular/router'
 	styleUrl: './header.component.scss',
 	imports: [RouterLink]
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+	isMenuOpen = false
+
+	toggleMenu() {
+		this.isMenuOpen = !this.isMenuOpen
+		if (this.isMenuOpen) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = 'auto'
+		}
+	}
+
+	closeMenu() {
+		this.isMenuOpen = false
+		document.body.style.overflow = 'auto'
+	}
+}

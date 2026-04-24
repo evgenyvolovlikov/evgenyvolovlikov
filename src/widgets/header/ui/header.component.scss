@@ -33,9 +33,7 @@
 
 .logo {
 	color: #000;
-	font-size: 1.1rem;
-	font-weight: 800;
-	letter-spacing: 1px;
+	font-weight: 700;
 	text-decoration: none;
 }
 
@@ -59,6 +57,48 @@
 	}
 }
 
+/* БУРГЕР КНОПКА */
+.burger {
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: none; // Скрыт на десктопе
+	flex-direction: column;
+	gap: 6px;
+	padding: 10px;
+	z-index: 1001;
+
+	span {
+		background: #000;
+		display: block;
+		height: 2px;
+		transition: 0.3s;
+		width: 25px;
+	}
+
+	&.active {
+		span:nth-child(1) {
+			transform: translateY(8px) rotate(45deg);
+		}
+
+		span:nth-child(2) {
+			opacity: 0;
+		}
+
+		span:nth-child(3) {
+			transform: translateY(-8px) rotate(-45deg);
+		}
+	}
+}
+
+.desktop-only {
+	display: block;
+}
+
+.mobile-only {
+	display: none;
+}
+
 .btn-login {
 	background: #000;
 	border: none;
@@ -78,5 +118,63 @@
 		background: #e2e2e2;
 		color: #a1a1a1;
 		cursor: not-allowed;
+	}
+}
+
+@media (width <= 768px) {
+	.burger {
+		display: flex;
+		z-index: 1001;
+	}
+
+	.desktop-only {
+		display: none;
+	}
+
+	.mobile-only {
+		display: block;
+		margin-top: 20px;
+	}
+
+	.nav {
+		background: #fff;
+		box-shadow: -5px 0 15px rgb(0 0 0 / 10%);
+		height: 100vh;
+		padding: 80px 40px;
+		position: fixed;
+		right: -100%; // Спрятано за экраном
+		top: 0;
+		transition: 0.4s;
+		width: 80%;
+		z-index: 1000;
+
+		&--open {
+			right: 0; // Выезжает
+		}
+
+		&__list {
+			flex-direction: column;
+			font-size: 18px;
+			gap: 25px;
+		}
+	}
+}
+
+.header__overlay {
+	backdrop-filter: blur(4px); /* Модный эффект размытия */
+	background: rgb(0 0 0 / 50%); /* Полупрозрачный черный */
+	height: 100vh;
+	left: 0;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	transition: all 0.3s ease;
+	visibility: hidden;
+	width: 100%;
+	z-index: 999; /* Чуть меньше, чем у .nav (у него будет 1000) */
+
+	&--visible {
+		opacity: 1;
+		visibility: visible;
 	}
 }

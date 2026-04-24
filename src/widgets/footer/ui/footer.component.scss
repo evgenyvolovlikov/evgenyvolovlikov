@@ -1,0 +1,109 @@
+:host {
+	background-color: #f9f9f9;
+	border-top: 1px solid #ececec;
+	display: block;
+	width: 100%;
+}
+
+.footer {
+	color: #000;
+	margin: 0 auto;
+	max-width: 1440px;
+	padding: 60px 20px 30px;
+
+	&-content {
+		display: flex;
+		gap: 40px;
+		justify-content: space-between;
+		margin-bottom: 60px;
+	}
+
+	&-section {
+		flex: 1;
+
+		h4 {
+			color: #333;
+			font-size: 15px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			margin-bottom: 25px;
+			text-transform: uppercase;
+		}
+
+		p {
+			color: #666;
+			font-size: 14px;
+			line-height: 1.6;
+		}
+	}
+
+	&-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+
+		&__link {
+			color: #000;
+			font-size: 14px;
+			text-decoration: none;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: #555;
+			}
+		}
+	}
+
+	&-bottom {
+		border-top: 1px solid #eee;
+		color: #999;
+		font-size: 13px;
+		padding-top: 30px;
+		text-align: center;
+	}
+}
+
+@media (width <= 768px) {
+	.footer {
+		padding: 40px 24px;
+
+		&-content {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 40px;
+			text-align: center;
+		}
+
+		&-section {
+			width: 100%;
+
+			.logo {
+				display: flex;
+				text-align: left;
+				width: 100%;
+			}
+
+			h4 {
+				font-size: 14px;
+				margin-bottom: 15px; // Чуть меньше отступ под заголовком
+				text-align: left;
+			}
+
+			nav {
+				align-items: flex-start; // Центрируем ссылки навигации
+				gap: 12px;
+			}
+
+			p {
+				max-width: 300px; // Ограничиваем ширину описания, чтобы не тянулось на весь экран
+				text-align: left;
+			}
+		}
+
+		&-bottom {
+			font-size: 12px;
+			margin-top: 20px;
+			text-align: left;
+		}
+	}
+}

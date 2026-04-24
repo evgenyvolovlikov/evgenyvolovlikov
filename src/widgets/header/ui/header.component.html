@@ -4,15 +4,30 @@
 			routerLink="/"
 			class="logo"
 		>
-			Evgeny Volovlikov
+			Евгений Воловликов
 		</a>
 
-		<nav class="nav">
+		<!-- Кнопка бургера (видна только на мобилках) -->
+		<button
+			class="burger"
+			(click)="toggleMenu()"
+			[class.active]="isMenuOpen"
+		>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<nav
+			class="nav"
+			[class.nav--open]="isMenuOpen"
+		>
 			<ul class="nav__list">
 				<li>
 					<a
 						routerLink="/course/angular"
 						routerLinkActive="active"
+						(click)="closeMenu()"
 						>Курс по Angular</a
 					>
 				</li>
@@ -20,13 +35,25 @@
 					<a
 						routerLink="/course/angular"
 						routerLinkActive="active"
+						(click)="closeMenu()"
 						>Подготовка к собеседованию</a
 					>
 				</li>
+
+				<!-- На мобилках кнопку "Войти" лучше переместить внутрь меню -->
+				<div class="actions mobile-only">
+					<button
+						class="btn-login"
+						routerLink="/auth/login"
+						(click)="closeMenu()"
+					>
+						Войти
+					</button>
+				</div>
 			</ul>
 		</nav>
 
-		<div class="actions">
+		<div class="actions desktop-only">
 			<button
 				class="btn-login"
 				routerLink="/auth/login"
@@ -35,4 +62,14 @@
 			</button>
 		</div>
 	</div>
+
+	<div
+		class="header__overlay"
+		[class.header__overlay--visible]="isMenuOpen"
+		(click)="closeMenu()"
+		(keydown.escape)="closeMenu()"
+		tabindex="-1"
+		role="button"
+		aria-label="Закрыть меню"
+	></div>
 </header>
