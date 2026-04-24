@@ -1,5 +1,5 @@
 import {Routes} from '@angular/router'
-import {ProfilePageComponent} from '@pages/profile'
+import {AccountPageComponent} from '@pages/account'
 import {AppRoutes} from '@shared/const/router'
 import {AuthLayoutComponent} from '@shared/layouts/auth'
 
@@ -26,8 +26,25 @@ export const appRoutes: Routes = [
 		]
 	},
 	{
-		path: AppRoutes.PROFILE,
-		component: ProfilePageComponent
+		path: AppRoutes.ACCOUNT,
+		component: AccountPageComponent,
+		children: [
+			{
+				path: AppRoutes.PROFILE,
+				loadComponent: () =>
+					import('@pages/profile').then(c => c.ProfilePageComponent)
+			},
+			{
+				path: AppRoutes.COURSES,
+				loadComponent: () =>
+					import('@pages/courses').then(c => c.CoursesPageComponent)
+			},
+			{
+				path: '**',
+				redirectTo: AppRoutes.PROFILE,
+				pathMatch: 'full'
+			}
+		]
 	},
 	{path: '**', redirectTo: AppRoutes.AUTH}
 ]

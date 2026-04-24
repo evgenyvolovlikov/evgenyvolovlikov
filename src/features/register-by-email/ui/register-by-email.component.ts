@@ -59,7 +59,7 @@ export class RegisterByEmailComponent {
 				setTimeout(() => resolve(requestData), 2000)
 			).then(console.log)
 
-			await this.router.navigate([AppRoutes.PROFILE])
+			await this.router.navigate([AppRoutes.ACCOUNT, AppRoutes.PROFILE])
 		} catch (error) {
 			console.error('Ошибка при регистрации', error)
 		} finally {

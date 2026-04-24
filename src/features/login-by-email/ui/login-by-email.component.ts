@@ -1,6 +1,6 @@
-import {Component, computed, signal} from '@angular/core'
+import {Component, computed, inject, signal} from '@angular/core'
 import {FormsModule} from '@angular/forms'
-import {RouterLink} from '@angular/router'
+import {Router, RouterLink} from '@angular/router'
 import {AppRoutes} from '@shared/const/router'
 import {ButtonComponent} from '@shared/ui/button'
 import {InputComponent} from '@shared/ui/input'
@@ -14,6 +14,7 @@ import {InputComponent} from '@shared/ui/input'
 })
 export class LoginByEmailComponent {
 	protected readonly AppRoutes = AppRoutes
+	private router = inject(Router)
 
 	email = signal('')
 	password = signal('')
@@ -40,5 +41,7 @@ export class LoginByEmailComponent {
 			email: this.email(),
 			password: this.password()
 		})
+
+		this.router.navigate([AppRoutes.ACCOUNT, AppRoutes.PROFILE])
 	}
 }
