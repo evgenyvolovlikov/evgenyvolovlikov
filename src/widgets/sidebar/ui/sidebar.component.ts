@@ -1,16 +1,18 @@
-import {CommonModule} from '@angular/common'
-import {Component, signal} from '@angular/core'
+import {Component, input, signal} from '@angular/core'
 import {RouterModule} from '@angular/router'
+import {NavLink} from '@shared/model'
 
 @Component({
 	selector: 'app-sidebar',
 	standalone: true,
-	imports: [RouterModule, CommonModule],
+	imports: [RouterModule],
 	templateUrl: './sidebar.component.html',
 	styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-	collapsed = signal(false)
+	links = input.required<NavLink[]>()
+
+	collapsed = signal(true)
 	onToggle() {
 		this.collapsed.update(prev => !prev)
 	}

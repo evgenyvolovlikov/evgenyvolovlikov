@@ -1,4 +1,6 @@
-<app-sticky-layout>
-	<app-sidebar sidebar />
-	<router-outlet />
-</app-sticky-layout>
+<div class="account-layout">
+	<app-sidebar [links]="navLinks" />
+	<div class="account-layout__content">
+		<router-outlet />
+	</div>
+</div>

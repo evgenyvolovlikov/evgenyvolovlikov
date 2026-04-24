@@ -1,39 +1,31 @@
-<aside
-	class="sidebar"
-	[class.sidebar--collapsed]="collapsed()"
->
-	<button
-		(click)="onToggle()"
-		class="sidebar__toggle"
-		type="button"
+<div class="sidebar-layout">
+	<aside
+		class="sidebar"
+		[class.sidebar--collapsed]="collapsed()"
+		[attr.aria-expanded]="!collapsed()"
 	>
-		{{ collapsed() ? '>' : '<' }}
-	</button>
-	<nav class="sidebar__nav">
-		<a
-			routerLink="/"
-			routerLinkActive="sidebar__link--active"
-			[routerLinkActiveOptions]="{exact: true}"
-			class="sidebar__link"
+		<button
+			(click)="onToggle()"
+			class="sidebar__toggle"
+			type="button"
 		>
-			<span class="sidebar__icon">🏠</span>
-			<span class="sidebar__text">Главная</span>
-		</a>
-		<a
-			routerLink="/account/profile"
-			routerLinkActive="sidebar__link--active"
-			class="sidebar__link"
-		>
-			<span class="sidebar__icon">👤</span>
-			<span class="sidebar__text">Профиль</span>
-		</a>
-		<a
-			routerLink="/account/courses"
-			routerLinkActive="sidebar__link--active"
-			class="sidebar__link"
-		>
-			<span class="sidebar__icon">📖</span>
-			<span class="sidebar__text">Курсы</span>
-		</a>
-	</nav>
-</aside>
+			{{ collapsed() ? '>' : '<' }}
+		</button>
+		<nav class="sidebar__nav">
+			@for (link of links(); track link.route) {
+				<a
+					[routerLink]="link.route"
+					routerLinkActive="sidebar__link--active"
+					class="sidebar__link"
+				>
+					<span class="sidebar__icon">{{ link.icon }}</span>
+					<span class="sidebar__text">{{ link.label }}</span>
+				</a>
+			}
+		</nav>
+	</aside>
+
+	<div class="sidebar-layout__content">
+		<ng-content />
+	</div>
+</div>

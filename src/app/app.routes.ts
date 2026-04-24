@@ -1,6 +1,7 @@
 import {Routes} from '@angular/router'
 import {AccountPageComponent} from '@pages/account'
-import {AppRoutes} from '@shared/const/router'
+import {AppRoutes} from '@shared/config'
+
 import {AuthLayoutComponent} from '@shared/layouts/auth'
 
 export const appRoutes: Routes = [

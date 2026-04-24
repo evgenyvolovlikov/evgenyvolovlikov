@@ -30,3 +30,6 @@ pnpm-debug.log*
 # --- Прочее ---
 /.ng/
 /.angular-cli.json
+
+# Приватные файлы
+/private

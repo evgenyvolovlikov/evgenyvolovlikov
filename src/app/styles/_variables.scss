@@ -1,0 +1,39 @@
+:root {
+	/* Базовая палитра (светлая тема по умолчанию) */
+	--bg-color: #fff;
+	--text-color: #000;
+	--border-color: #000;
+
+	/* Типографика */
+	--font-main: 'Inter', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', monospace;
+
+	/* Сайдбар */
+	--sidebar-width-full: 240px;
+	--sidebar-width-collapsed: 64px;
+	--sidebar-width-mobile: 56px;
+
+	/* Цвета */
+	--sidebar-bg: #000;
+	--sidebar-border: #222;
+	--sidebar-text: #fff;
+	--sidebar-text-muted: #a1a1a1;
+
+	// /* Взаимодействие с элементами */
+	// --sidebar-toggle-bg: #222;
+	// --sidebar-toggle-border: #444;
+	// --sidebar-link-active-bg: #fff;
+	// --sidebar-link-active-text: #000;
+	// --sidebar-link-hover-bg: rgb(255 255 255 / 10%);
+
+	// /* Анимация */
+	// --sidebar-transition-duration: 0.3s;
+	// --sidebar-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+	// --sidebar-transition: var(--sidebar-transition-duration)
+	// 	var(--sidebar-transition-timing);
+
+	// /* Отсутпы, радиус */
+	// --sidebar-gap: 8px;
+	// --sidebar-padding: 12px;
+	// --sidebar-radius: 12px;
+}

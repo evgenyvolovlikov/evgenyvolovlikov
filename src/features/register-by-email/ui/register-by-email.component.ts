@@ -1,7 +1,7 @@
 import {Component, computed, inject, signal} from '@angular/core'
 import {FormsModule} from '@angular/forms'
 import {Router, RouterLink} from '@angular/router'
-import {AppRoutes} from '@shared/const/router'
+import {AppRoutes} from '@shared/config'
 import {ButtonComponent} from '@shared/ui/button'
 import {InputComponent} from '@shared/ui/input'
 
