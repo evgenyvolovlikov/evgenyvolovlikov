@@ -1,0 +1,28 @@
+:host {
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.auth-main {
+	align-items: center;
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	padding-bottom: 10vh;
+
+	&__container {
+		box-sizing: border-box;
+		max-width: 360px;
+		padding: 0 20px;
+		width: 100%;
+	}
+}
+
+@media (width <= 767px) {
+	.auth-main {
+		align-items: flex-start;
+		padding-top: 40px;
+	}
+}

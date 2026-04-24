@@ -3,8 +3,8 @@ import {AccountPageComponent} from '@pages/account'
 import {HomePageComponent} from '@pages/home'
 import {AppRoutes, getRouteCourse} from '@shared/config'
 
-import {AuthLayoutComponent} from '@shared/layouts/auth'
-import {MainLayoutComponent} from '@shared/layouts/main'
+import {AuthLayoutComponent} from './layouts/auth/auth-layout.component'
+import {MainLayoutComponent} from './layouts/main-layout/main-layout.component'
 
 export const appRoutes: Routes = [
 	{
@@ -25,7 +25,7 @@ export const appRoutes: Routes = [
 
 	{
 		path: AppRoutes.AUTH,
-		component: AuthLayoutComponent, // Рефактор
+		component: AuthLayoutComponent,
 		children: [
 			{
 				path: AppRoutes.LOGIN,

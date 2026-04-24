@@ -1,5 +1,6 @@
 import {Component} from '@angular/core'
-import {RouterOutlet} from '@angular/router'
+import {RouterModule} from '@angular/router'
+import {BaseLayoutComponent} from '@shared/layouts/base'
 import {FooterComponent} from '@widgets/footer'
 import {HeaderComponent} from '@widgets/header'
 
@@ -7,7 +8,6 @@ import {HeaderComponent} from '@widgets/header'
 	selector: 'app-main-layout',
 	templateUrl: './main-layout.component.html',
 	standalone: true,
-	styleUrl: './main-layout.component.scss',
-	imports: [RouterOutlet, HeaderComponent, FooterComponent]
+	imports: [BaseLayoutComponent, HeaderComponent, RouterModule, FooterComponent]
 })
 export class MainLayoutComponent {}

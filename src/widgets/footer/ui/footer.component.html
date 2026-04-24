@@ -1,31 +1,40 @@
 <footer class="footer">
-	<div class="footer-content">
-		<div class="footer-section">
-			<div class="logo">Евгений Воловликов</div>
-			<p>Обучающая плафторма</p>
+	<div class="footer__main">
+		<div class="footer__brand">
+			<span class="footer__logo">Евгений Воловликов</span>
+			<p class="footer__description">
+				Практические курсы по Angular и Frontend-разработке от эксперта.
+			</p>
 		</div>
 
-		<div class="footer-section">
-			<h4>Навигация</h4>
-			<nav class="footer-nav">
-				<a
-					class="footer-nav__link"
-					routerLink="/"
-					>Главная страница</a
-				>
-				<a
-					class="footer-nav__link"
-					routerLink="/about"
-					>О нас</a
-				>
-			</nav>
-		</div>
+		<!-- Блок со всеми ссылками -->
+		<div class="footer__nav-group">
+			<div class="footer__col">
+				<h4>Навигация</h4>
+				<nav>
+					<a routerLink="/">Главная страница</a>
+					<a routerLink="/courses/angular">Курс по Angular</a>
+					<a routerLink="/courses/angular">Подготовка к собеседованию</a>
+				</nav>
+			</div>
 
-		<div class="footer-section">
-			<h4>Контакты</h4>
-			<p>info@example.com</p>
+			<div class="footer__col">
+				<h4>Юр. информация</h4>
+				<nav>
+					<a routerLink="/legal/terms">Пользовательское соглашение</a>
+					<a routerLink="/legal/privacy">Политика конфиденциальности</a>
+					<a routerLink="/legal/offer">Публичная оферта</a>
+				</nav>
+			</div>
+
+			<div class="footer__col">
+				<h4>Контакты</h4>
+				<p>info@example.com</p>
+			</div>
 		</div>
 	</div>
 
-	<div class="footer-bottom">&copy; 2026 MyProject. Все права защищены.</div>
+	<div class="footer__bottom">
+		&copy; 2026 Евгений Воловликов. Все права защищены.
+	</div>
 </footer>

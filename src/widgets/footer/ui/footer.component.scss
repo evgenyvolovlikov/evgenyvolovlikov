@@ -1,109 +1,131 @@
 :host {
-	background-color: #f9f9f9;
-	border-top: 1px solid #ececec;
+	background-color: #fafafa;
+	border-top: 1px solid #eaeaea;
 	display: block;
 	width: 100%;
 }
 
 .footer {
-	color: #000;
+	box-sizing: border-box;
 	margin: 0 auto;
-	max-width: 1440px;
-	padding: 60px 20px 30px;
 
-	&-content {
+	// Главный контейнер, который держит всё по центру 1440px
+	max-width: 1440px;
+	padding: 60px 20px 40px;
+
+	&__main {
 		display: flex;
-		gap: 40px;
-		justify-content: space-between;
+		gap: 120px; // Четкий отступ между колонками
+		justify-content: flex-start; // Контент прижат к левому краю, как в хедере
 		margin-bottom: 60px;
+		text-align: left;
 	}
 
-	&-section {
-		flex: 1;
+	&__brand {
+		max-width: 320px;
+	}
+
+	&__logo {
+		color: #000;
+		display: block;
+		font-size: 18px;
+		font-weight: 700;
+		margin-bottom: 15px;
+	}
+
+	&__description {
+		color: #666;
+		font-size: 14px;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	&__nav-group {
+		display: flex;
+		gap: 80px; // Расстояние между Навигацией и Контактами
+		justify-content: flex-start;
+	}
+
+	&__col {
+		min-width: 150px;
+		text-align: left;
 
 		h4 {
-			color: #333;
-			font-size: 15px;
+			color: #000;
+			font-size: 13px;
 			font-weight: 700;
-			letter-spacing: 1px;
-			margin-bottom: 25px;
+			letter-spacing: 0.05em;
+			margin-bottom: 20px;
+			text-align: left;
 			text-transform: uppercase;
 		}
 
-		p {
-			color: #666;
-			font-size: 14px;
-			line-height: 1.6;
-		}
-	}
+		nav {
+			align-items: flex-start;
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
 
-	&-nav {
-		display: flex;
-		flex-direction: column;
-		gap: 15px;
+			a {
+				color: #444;
+				font-size: 14px;
+				text-align: left;
+				text-decoration: none;
+				transition: color 0.2s;
 
-		&__link {
-			color: #000;
-			font-size: 14px;
-			text-decoration: none;
-			transition: color 0.2s ease;
-
-			&:hover {
-				color: #555;
+				/* stylelint-disable-next-line max-nesting-depth */
+				&:hover {
+					color: #000;
+				}
 			}
 		}
+
+		p {
+			color: #444;
+			font-size: 14px;
+			margin: 0;
+			text-align: left;
+		}
 	}
 
-	&-bottom {
+	&__bottom {
 		border-top: 1px solid #eee;
-		color: #999;
-		font-size: 13px;
+		color: #aaa;
+		font-size: 12px;
 		padding-top: 30px;
-		text-align: center;
+		text-align: left;
 	}
 }
 
+// Адаптив
 @media (width <= 768px) {
-	.footer {
-		padding: 40px 24px;
+	.footer__main {
+		flex-direction: column;
+		gap: 24px;
+		text-align: left;
+	}
 
-		&-content {
-			align-items: flex-start;
-			flex-direction: column;
-			gap: 40px;
-			text-align: center;
+	.footer__brand {
+		margin: 0;
+	}
+
+	.footer__col {
+		h4 {
+			display: none;
 		}
 
-		&-section {
-			width: 100%;
-
-			.logo {
-				display: flex;
-				text-align: left;
-				width: 100%;
-			}
-
-			h4 {
-				font-size: 14px;
-				margin-bottom: 15px; // Чуть меньше отступ под заголовком
-				text-align: left;
-			}
-
-			nav {
-				align-items: flex-start; // Центрируем ссылки навигации
-				gap: 12px;
-			}
-
-			p {
-				max-width: 300px; // Ограничиваем ширину описания, чтобы не тянулось на весь экран
-				text-align: left;
-			}
+		nav {
+			gap: 8px;
 		}
 
-		&-bottom {
-			font-size: 12px;
-			margin-top: 20px;
-			text-align: left;
+		p {
+			padding-top: 8px;
 		}
+	}
+
+	.footer__nav-group {
+		flex-flow: column wrap;
+		gap: 0;
+		justify-content: left;
 	}
 }
