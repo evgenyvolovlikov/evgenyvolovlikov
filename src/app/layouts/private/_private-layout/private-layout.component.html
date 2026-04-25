@@ -1,3 +1,38 @@
-<section>Private Layout</section>
+<div class="block__start">
+	<div class="start__logo">
+		<img
+			ngSrc="images/logo.svg"
+			width="170"
+			height="41"
+			alt="logo"
+		/>
+	</div>
+	<div class="start__menu">
+		@for (item of navLinks; track item.id) {
+			<app-nav-button
+				class="start__dashboard-button"
+				[text]="item.text"
+				[iconUrl]="item.iconUrl"
+				[iconUrlActive]="item.iconUrlActive"
+				[routerLink]="item.link"
+				routerLinkActive="active"
+			></app-nav-button>
+		}
+	</div>
+	<div class="start__exit-link">
+		<app-nav-button
+			class="start__logout-button"
+			text="Выход"
+			iconUrl="menu/logout.svg"
+			iconUrlActive="menu/logout.svg"
+			(clicked)="onLogoutClick()"
+		></app-nav-button>
+	</div>
+</div>
 
-<router-outlet />
+<div class="block__end">
+	<div class="end__nav">header</div>
+	<div class="end__container">
+		<router-outlet />
+	</div>
+</div>

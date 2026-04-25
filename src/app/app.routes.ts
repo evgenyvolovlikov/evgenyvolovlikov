@@ -5,6 +5,9 @@ import {PrivateLayoutComponent} from './layouts/private'
 import {LoginPageComponent} from '@pages/login'
 import {DashboardPageComponent} from '@pages/dashboard'
 import {authGuard} from '@shared/guards/auth.guards'
+import {AssetsPageComponent} from '@pages/assets/assets.component'
+import {RatesPageComponent} from '@pages/rates/rates.component'
+import {ExchangePageComponent} from '@pages/exchange/exchange.component'
 
 export const appRoutes: Routes = [
 	{
@@ -29,6 +32,18 @@ export const appRoutes: Routes = [
 			{
 				path: ROUTE_CONSTANTS.DASHBOARD,
 				component: DashboardPageComponent
+			},
+			{
+				path: ROUTE_CONSTANTS.ASSETS,
+				component: AssetsPageComponent
+			},
+			{
+				path: ROUTE_CONSTANTS.RATES,
+				component: RatesPageComponent
+			},
+			{
+				path: ROUTE_CONSTANTS.EXCHANGE,
+				component: ExchangePageComponent
 			}
 		]
 	},
